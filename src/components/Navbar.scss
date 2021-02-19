@@ -3,6 +3,8 @@ nav {
   top: 0;
   left: 0;
   width: 100vw;
+  z-index: 999;
+  background: linear-gradient(116deg, #2559cd 9%, #103bc1 80%);
   .nav-inner {
     display: flex;
     align-items: center;
