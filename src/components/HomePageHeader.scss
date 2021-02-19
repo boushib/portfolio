@@ -5,6 +5,7 @@ header {
   max-height: $max-height;
   background-color: #2559cd;
   background: linear-gradient(116deg, #2559cd 9%, #1d4dc9 41%, #0f38c1 80%);
+  position: relative;
   .hero {
     height: calc(100vh - 60px);
     max-height: calc(#{$max-height} - 60px);
@@ -26,6 +27,21 @@ header {
     p {
       font-weight: 500;
       margin-bottom: 24px;
+    }
+  }
+  .rocket {
+    position: absolute;
+    width: 204px;
+    right: 228px;
+    bottom: 132px;
+  }
+  .clouds {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    &.background {
+      mix-blend-mode: soft-light;
     }
   }
 }

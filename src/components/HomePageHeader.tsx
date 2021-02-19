@@ -1,5 +1,8 @@
 import Navbar from './Navbar'
 import './HomePageHeader.scss'
+import Rocket from '../assets/img/rocket.svg'
+import CloudsForeground from '../assets/img/clouds-foreground.svg'
+import CloudsBackground from '../assets/img/clouds-background.svg'
 
 const HomePageHeader = () => (
   <header>
@@ -20,6 +23,9 @@ const HomePageHeader = () => (
           <button className="btn outlined">Resume</button>
         </div>
       </div>
+      <img className="rocket" src={Rocket} alt="rocket" />
+      <img className="clouds background" src={CloudsBackground} alt="clouds" />
+      <img className="clouds foreground" src={CloudsForeground} alt="clouds" />
     </div>
   </header>
 )
