@@ -25,6 +25,11 @@ nav {
       color: #fff;
       font-size: 15px;
       font-weight: 500;
+      opacity: 0.7;
+      transition: opacity 0.4s ease-in-out;
+      &.active {
+        opacity: 1;
+      }
     }
     a {
       color: inherit;

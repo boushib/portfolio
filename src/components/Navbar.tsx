@@ -8,7 +8,7 @@ const Navbar = () => (
           El<span>B</span>
         </div>
         <ul className="main-menu">
-          <li>
+          <li className="active">
             <a href="#home">Home</a>
           </li>
           <li>
