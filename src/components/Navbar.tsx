@@ -1,8 +1,12 @@
+import './Navbar.scss'
+
 const Navbar = () => (
   <nav>
     <div className="container">
       <div className="nav-inner">
-        <div className="nav-brand">ElB</div>
+        <div className="nav-brand">
+          El<span>B</span>
+        </div>
         <ul className="main-menu">
           <li>
             <a href="#home">Home</a>

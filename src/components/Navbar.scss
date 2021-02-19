@@ -1,0 +1,30 @@
+nav {
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    span {
+      color: #fdba46;
+    }
+  }
+
+  .main-menu {
+    display: flex;
+    align-items: center;
+    li {
+      padding: 20px;
+      color: #fff;
+      font-size: 15px;
+    }
+    a {
+      color: inherit;
+      font-size: inherit;
+      text-decoration: none;
+    }
+  }
+}
