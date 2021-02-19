@@ -1,0 +1,23 @@
+$orange: #fdba46;
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 14.5px 20px;
+  min-width: 136px;
+  background: linear-gradient(100deg, #fdd662 -14.8%, #fca330 106%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+  &.outlined {
+    background: transparent;
+    color: $orange;
+    border: 1px solid $orange;
+    padding: 13.5px 20px;
+  }
+}

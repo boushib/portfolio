@@ -1,4 +1,26 @@
 header {
   min-height: 100vh;
   background-color: #2559cd;
+  .hero {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    h1,
+    h2,
+    p {
+      max-width: 444px;
+    }
+
+    h1,
+    h2 {
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+  }
 }

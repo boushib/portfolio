@@ -1,13 +1,15 @@
+@import 'scss/reset';
 @import 'scss/grid';
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import 'scss/forms';
 
 .app {
   font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
 }
 
 ul {
