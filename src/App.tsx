@@ -1,9 +1,9 @@
-import Navbar from './components/Navbar'
+import HomePageHeader from './components/HomePageHeader'
 import './App.scss'
 
 const App = () => (
   <div className="App">
-    <Navbar />
+    <HomePageHeader />
   </div>
 )
 
