@@ -3,6 +3,7 @@ import './App.scss'
 import WhyChooseMe from './components/WhyChooseMe'
 import Technologies from './components/Technologies'
 import Projects from './components/Projects'
+import Testimonials from './components/Testimonials'
 
 const App = () => (
   <div className="app">
@@ -10,6 +11,7 @@ const App = () => (
     <WhyChooseMe />
     <Technologies />
     <Projects />
+    <Testimonials />
   </div>
 )
 

@@ -1,0 +1,45 @@
+.testimonial {
+  width: 300px;
+  margin: 12px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  .quote-icon {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+  }
+  .user-info {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+  }
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(99.51deg, #fdd662 -14.8%, #fca330 105.66%);
+    margin-right: 12px;
+    background-size: cover;
+    background-position: center;
+  }
+  .username {
+    font-size: 14px;
+    color: #8c8c8c;
+    margin-bottom: 4px;
+  }
+  .message {
+    font-size: 15px;
+    line-height: 21px;
+    color: #898989;
+  }
+  .rating {
+    .star-icon {
+      &:not(:last-child) {
+        margin-right: 2px;
+      }
+    }
+  }
+}
