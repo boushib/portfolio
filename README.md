@@ -2,29 +2,34 @@
 
 Built using React.js, Redux & TypeScript.
 
-## Getting Started with Create React App
+## Dependencies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Node.js
 
-Runs the app in the development mode.
+## Starting the dev environement
 
-```bash
+This project was bootstrapped with `create-react-app`
+
+- Run the app in the development mode.
+
+```lang-none
 yarn start
 ```
 
-Builds the app for production to the `build` folder.
+This will by default start the app at port `3000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Build & deploy the app
 
-```bash
+```lang-none
 yarn build
 ```
+
+this will build the app for production to the `build` folder & your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[React documentation](https://reactjs.org/).
