@@ -5,8 +5,9 @@ Built using React.js, Redux & TypeScript.
 ## Dependencies
 
 - Node.js
+- yarn (or npm)
 
-## Starting the dev environement
+## Dev Environement
 
 This project was bootstrapped with `create-react-app`
 
