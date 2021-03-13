@@ -4,7 +4,10 @@ nav {
   left: 0;
   width: 100vw;
   z-index: 999;
-  background: linear-gradient(116deg, #2559cd 9%, #103bc1 80%);
+  transition: background-color 0.2s ease-in-out;
+  &.has-bg {
+    background-color: #1945c6;
+  }
   .nav-inner {
     display: flex;
     align-items: center;
