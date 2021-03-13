@@ -39,6 +39,7 @@ header {
     bottom: 0;
     &.background {
       mix-blend-mode: soft-light;
+      opacity: 0.24;
     }
     &.foreground {
       bottom: -1px;
