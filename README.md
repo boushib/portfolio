@@ -1,6 +1,6 @@
-# My personal portfolio
+# ElB Portfolio
 
-Built using React.js, Redux & TypeScript.
+This is my personal portfolio. Built using React.js, Redux & TypeScript.
 
 ## Dependencies
 
