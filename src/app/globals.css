@@ -1,26 +1,157 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f5f4ef;
+  --bg-elev: #ffffff;
+  --fg: #0c0c0e;
+  --muted: #5d5d66;
+  --faint: #8f8f98;
+  --line: rgb(12 12 14 / 0.1);
+  --accent: #4f46e5;
+  --accent-2: #f0613a;
+  --accent-3: #0ea5b7;
+  --glow: rgb(79 70 229 / 0.18);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #07070a;
+  --bg-elev: #111116;
+  --fg: #f2f2f4;
+  --muted: #a1a1ab;
+  --faint: #6b6b75;
+  --line: rgb(255 255 255 / 0.09);
+  --accent: #8b85ff;
+  --accent-2: #ff7a55;
+  --accent-3: #34d8e8;
+  --glow: rgb(139 133 255 / 0.22);
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-elev: var(--bg-elev);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Theme switch: circular reveal driven from JS via the View Transitions API */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--accent) 0%, var(--accent-3) 45%, var(--accent-2) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 8s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-pan {
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: grain 1.2s steps(6) infinite;
+}
+
+[data-theme="dark"] .grain::after {
+  opacity: 0.07;
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -4%); }
+  60% { transform: translate(-4%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+.marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+.marquee-reverse {
+  animation-direction: reverse;
+}
+.marquee-wrap:hover .marquee {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Per-role colours on the experience timeline: a hue per role, lightness tuned per theme. */
+:root {
+  --role-s: 72%;
+  --role-l: 44%;
+}
+[data-theme="dark"] {
+  --role-s: 85%;
+  --role-l: 72%;
+}
+.role {
+  --role: hsl(var(--h) var(--role-s) var(--role-l));
+}
+
+.hairline-grid {
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
